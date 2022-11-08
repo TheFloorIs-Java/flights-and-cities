@@ -12,9 +12,7 @@ public class FlightController {
 
     private FlightService flightService;
 
-    public FlightController(FlightService flightService){
-        this.flightService = flightService;
-    }
+    public FlightController(FlightService flightService){ this.flightService = flightService; }
 
     @PostMapping("/")
     public /* Do we want to send back something ? */ void createFlight(@RequestBody Flight f){
@@ -23,12 +21,12 @@ public class FlightController {
 
     @GetMapping("/arrivingCity={cityName}")
     public Flight getArrivingCity(@PathVariable String cityName){
-        this.flightService.findByDepartingCity(cityName);
+        return this.flightService.findByDepartingCity(cityName);
     }
 
     @GetMapping("/departingCity={cityName}")
     public Flight getDepartingCity(@PathVariable String cityName){
-        this.flightService.(cityName);
+        return this.flightService.findByDepartingCity(cityName);
     }
 
 

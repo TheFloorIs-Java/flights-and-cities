@@ -8,20 +8,20 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Table(name = "cities")
 public class City {
 
-    @Column(name = "city_id")
     @Id
+    @Column(name = "city_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cityId;
 
     @Column(name="city_name")
     //@OneToMany
-    String cityName;
+    private String cityName;
 
 }
